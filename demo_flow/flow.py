@@ -26,8 +26,7 @@ def download_data() -> pd.DataFrame:
     """Download data via HTTP and create DataFrame"""
     with urllib.request.urlopen(COVID_DATA_URL) as url:
         covid_data = json.loads(url.read().decode())["records"]
-        covid_df = pd.DataFrame(covid_data)
-        return covid_df
+        return pd.DataFrame(covid_data)
 
 
 @task
